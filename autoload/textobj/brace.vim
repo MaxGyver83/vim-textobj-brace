@@ -1,8 +1,8 @@
 function! s:select(object_type)
-    call search('[\|(\|{\|<', 'bce')
-    let start_position = getpos('.')
-    normal! %
+    call search(']\|)\|}\|>', 'ce')
     let end_position = getpos('.')
+    normal! %
+    let start_position = getpos('.')
 
     if a:object_type ==? 'i'
         let start_position[2] += 1
